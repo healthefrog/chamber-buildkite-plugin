@@ -1,0 +1,11 @@
+name: Chamber
+description: Loads secrets using chamber (https://github.com/segmentio/chamber)
+author: https://github.com/healthefrog
+requirements:
+- chamber
+configuration:
+  properties:
+    service:
+      type: string
+  required:
+  - service

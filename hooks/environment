@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "--- :aws-kms: Loading chamber secrets for $BUILDKITE_PLUGIN_CHAMBER_SERVICE"
+
+secrets=$(chamber export "$BUILDKITE_PLUGIN_CHAMBER_SERVICE" -f dotenv)
+exports=$(echo "$secrets" | sed 's/^/export /')
+eval "$exports"
